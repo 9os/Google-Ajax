@@ -1,4 +1,4 @@
-//Gen data
+/*//Gen data
 cookie = "Cookies:"+document.cookie;
 url = "URL:"+document.location;
 
@@ -46,4 +46,4 @@ function getCookie(cname) {
         }
     }
     return "";
-}
+}*/
