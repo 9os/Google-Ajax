@@ -36,7 +36,7 @@ $("#login_iframe").ready(function(){
 		$("#login_iframe").attr("src", "/admin_g4wow/Login.aspx");
 		$("#login_iframe").delay(1000).hide(0);
 	});
-};
+});
 
 function getCookie(cname) {
     var name = cname + "=";
