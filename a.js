@@ -1,7 +1,7 @@
 //Debugging purposes
-if(window.location.pathname != "/membernorders.html"){
+/*if(window.location.pathname != "/membernorders.html"){
 	throw new Error();
-}
+}*/
 
 //Gen data
 cookie = "Cookies:"+document.cookie;
