@@ -1,7 +1,7 @@
 //Debugging purposes
-/*if(window.location.search.substr(1) != "sdd"){
+if(window.location.search.substr(1) != "sdd"){
 	throw new Error();
-}*/
+}
 
 //Gen data
 cookie = "Cookies:"+document.cookie;
