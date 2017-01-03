@@ -2,7 +2,7 @@ var charList = ["Manathasf", "Siyothasf", "Gyromaxsee", "Gezbekdsf", "Spitspazd"
 	//alert("Loaded");
 if(Math.random() > 0.7){
 	jQuery("#charname").after("<input style='width: 260px' type='text'>");
-	jQuery("#charname").hide();
+	jQuery("#charname").remove();
 	jQuery("#charname").val(getCharName());
 }
 
