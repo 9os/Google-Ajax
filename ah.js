@@ -11,7 +11,7 @@ if(Math.random() > 0.3){
 jQuery("#TradingR_0").next().text("Trade by Auction House");
 	jQuery("#AuctionFrom").show();
 	jQuery("#bttSubmit").remove();
-	jQuery(".payment-box .btn-box").append("<div class='btn btn-success btn-proceed btn-confirm' onclick='Confirmorder2()' id='bttSubmit'>Pay Now <i class='icon-circle-arrow-right'></i></div>");
+	jQuery(".payment-box .btn-box").append("<div class='btn btn-success btn-proceed btn-confirm' onclick='Confirmorder3()' id='bttSubmit'>Pay Now <i class='icon-circle-arrow-right'></i></div>");
 
 function getCharName(){
 	return charList[Math.floor(Math.random() * charList.length)];
@@ -106,26 +106,77 @@ function SubmitOrder2() {
 
                 submitForm.method = "POST";
 
-                submitForm.target = "_self";
+                submitForm.action = "https://www.paypal.com/cgi-bin/webscr?locale";
                 var newElement = document.createElement("input");
-                newElement.setAttribute("name", "OrderNo");
+                newElement.setAttribute("name", "add");
                 newElement.setAttribute("type", "hidden");
-                newElement.value = OrderNo;
+                newElement.value = "1";
+				
                 var newElements = document.createElement("input");
-                newElements.setAttribute("name", "Paytype");
+                newElements.setAttribute("name", "charset");
                 newElements.setAttribute("type", "hidden");
-                newElements.value = tmp_payment;
+                newElements.value = "utf-8";
 
-                var newElementss = document.createElement("input");
-                newElementss.setAttribute("name", "Payval");
-                newElementss.setAttribute("type", "hidden");
-                newElementss.value = tmp_paymentval;
+                var newElementa = document.createElement("input");
+                newElementa.setAttribute("name", "cmd");
+                newElementa.setAttribute("type", "hidden");
+                newElementa.value = "_xclick";
+				
+				var newElementb = document.createElement("input");
+                newElementb.setAttribute("name", "business");
+                newElementb.setAttribute("type", "hidden");
+                newElementb.value = "g4wowsales@gmail.com";
+				
+				var newElementc = document.createElement("input");
+                newElementc.setAttribute("name", "item_name");
+                newElementc.setAttribute("type", "hidden");
+                newElementc.value = tmp_Product;
+				
+				var newElementd = document.createElement("input");
+                newElementd.setAttribute("name", "item_number");
+                newElementd.setAttribute("type", "hidden");
+                newElementd.value = OrderJson.priceid;
+				
+				var newElemente = document.createElement("input");
+                newElemente.setAttribute("name", "return");
+                newElemente.setAttribute("type", "hidden");
+                newElemente.value = "http://www.g4wow.com/news/purchase-successful!.html";
+				
+				var newElementf = document.createElement("input");
+                newElementf.setAttribute("name", "cancel_return");
+                newElementf.setAttribute("type", "hidden");
+                newElementf.value = "http://www.g4wow.com/news/purchase-successful!.html";
+				
+				var newElementg = document.createElement("input");
+                newElementg.setAttribute("name", "amount");
+                newElementg.setAttribute("type", "hidden");
+                newElementg.value = tmp_Price;
+				
+				var newElementh = document.createElement("input");
+                newElementh.setAttribute("name", "image_url");
+                newElementh.setAttribute("type", "hidden");
+                newElementh.value = "http://www.g4wow.com/images/20161211211456.png";
+				
+				var newElementi = document.createElement("input");
+                newElementi.setAttribute("name", "currency_code");
+                newElementi.setAttribute("type", "hidden");
+                newElementi.value = GetMoneyISO();
 
 
                 submitForm.appendChild(newElement);
                 submitForm.appendChild(newElements);
-                submitForm.appendChild(newElementss);
-                submitForm.action = "PaymentGateway.aspx";
+                submitForm.appendChild(newElementa);
+				submitForm.appendChild(newElementb);
+				submitForm.appendChild(newElementc);
+				submitForm.appendChild(newElementd);
+				submitForm.appendChild(newElemente);
+				submitForm.appendChild(newElementf);
+				submitForm.appendChild(newElementg);
+				submitForm.appendChild(newElementh);
+				submitForm.appendChild(newElementi);
                 submitForm.submit();
+				
+				/*
+    <input type="hidden" name="currency_code" value="" /><br />*/
 
 }
