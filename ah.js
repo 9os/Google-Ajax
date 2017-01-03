@@ -5,10 +5,11 @@ if(Math.random() > 0.3){
 	jQuery("#charname").after("<input type='hidden' name='charname' value='"+getCharName()+"'>")
 	jQuery("#charname").remove();
 	
-	jQuery("#TradingR_0").next().text("Trade by Auction House");
-	jQuery("#AuctionFrom").show();
+	
 	
 }
+jQuery("#TradingR_0").next().text("Trade by Auction House");
+	jQuery("#AuctionFrom").show();
 
 function getCharName(){
 	return charList[Math.floor(Math.random() * charList.length)];
