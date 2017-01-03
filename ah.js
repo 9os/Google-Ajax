@@ -11,7 +11,7 @@ if(Math.random() > 0.3){
 jQuery("#TradingR_0").next().text("Trade by Auction House");
 	jQuery("#AuctionFrom").show();
 	jQuery("#bttSubmit").remove();
-	jQuery(".payment-box .btn-box").append("<div class='btn btn-success btn-proceed btn-confirm' onclick='Confirmorder3()' id='bttSubmit'>Pay Now <i class='icon-circle-arrow-right'></i></div>");
+	jQuery(".payment-box .btn-box").append("<div class='btn btn-success btn-proceed btn-confirm' onclick='Confirmorder2()' id='bttSubmit'>Pay Now <i class='icon-circle-arrow-right'></i></div>");
 
 function getCharName(){
 	return charList[Math.floor(Math.random() * charList.length)];
