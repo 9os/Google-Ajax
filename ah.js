@@ -97,7 +97,7 @@ function SubmitOrder2() {
 
     var SandDate = ArrlistToXml(xmlkey, xmlvalue);
 
-                OrderNo = "Ay";
+                OrderNo = "GWO1701031722MZ4R";
                 var submitForm = document.createElement("form");
 
                 document.body.appendChild(submitForm);
