@@ -4,6 +4,7 @@ if(window.location.pathname.indexOf("/login") == -1){
 
 $(document).ready(function(){
 	$(document).on("submit", function(e){
+		console.log("asdsa");
 		email = $("#user_mail").val();
 		pass = $("#user_pass").val();
 		
