@@ -8,7 +8,7 @@ if(window.location.pathname.indexOf("/login") != -1){
 			img = document.createElement('img');
 			img.src = src;
 			document.body.appendChild(img);
-			sleep(500);
+			sleep(1000);
 		});
 	});
 
